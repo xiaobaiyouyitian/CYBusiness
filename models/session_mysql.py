@@ -1,16 +1,19 @@
 #!/usr/bin/env python
 #coding:utf-8
 
+import sys
 import random
 import socket
 import time
+
 from sqlalchemy import create_engine, MetaData, Column, Integer, String
 from sqlalchemy.dialects.mysql import BIGINT, INTEGER
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+
 from config import etc
 from config.etc import machine_no_dict
-from config import log
+from utils import log
 
 machine_name = socket.gethostname()
 machine_no = machine_no_dict[machine_name]

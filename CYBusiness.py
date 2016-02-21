@@ -5,15 +5,21 @@
 this project for CY and only a practice
 '''
 
+import sys
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 import tornado.options
-import etc
-from views import user_api
+import tornado.escape
 
-from tornado.options import define, options
-define("port", default=8000, help="run on the given port", type=int)
+from config import etc
+from utils import log
+
+from views import user
+
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 
 class Application(tornado.web.Application):
     
@@ -23,22 +29,44 @@ class Application(tornado.web.Application):
 	    template_path=etc.path_tempalte,
 	    static_path=etc.path_static,
 	    cookie_secret=etc.cookie_secret,
-	    login_url=r"/signin",
+	    login_url=r"guest",
 	    xsrf_cookies=False,
+	    debug=True
 	)
         
         handlers = [
-            (r"/", user_api.WelcomeHandler),
-            (r"/signin", user_api.SignInHandler),
-	    (r"/signout", user_api.SignOutHandler),
-	    (r"/signup", user_api.SignUpHandler),
-        ]
+            (r'/login/', user.LoginHandler),
+            (r'/top/', user.TopHandler),
+            (r'/admin/', user.AdminHandler),
+            (r'/admin2/', user.Admin2Handler),
+            (r'/admin3/', user.Admin3Handler),
+            (r'/admin4/', user.Admin4Handler),
+            (r'/admin5/', user.Admin5Handler),
+            (r'/admin6/', user.Admin6Handler),
+            (r'/admin7/', user.Admin7Handler),
+            (r'/admin8/', user.Admin8Handler),
+            (r'/admin9/', user.Admin9Handler),
+            (r'/admin10/', user.Admin10Handler),
+            (r'/admin11/', user.Admin11Handler),
+            (r'/admin12/', user.Admin12Handler),
+	]
 
 	tornado.web.Application.__init__(self, handlers, **settings)
 
+def main(p_port):
+    if p_port == 0:
+        print 'port could not be set as 0'
+	log.e('port could not be set as 0')
+	exit(1)
+    log.c('www listening on port : %s' % p_port)
+    app = Application()
+    app.listen(p_port)
+    log.i(app.settings['template_path'])
+    log.i(app.settings['static_path'])
+    tornado.ioloop.IOLoop.instance().start()
+
 
 if __name__ == '__main__':
-    tornado.options.parse_command_line()
-    http_server = tornado.httpserver.HTTPServer(Application())
-    http_server.listen(options.port)
-    tornado.ioloop.IOLoop.instance().start()
+    main(10000)
+
+

@@ -7,8 +7,10 @@ import logging
 '''
 Applcation etc
 '''
+
 path_tempalte = os.path.join(os.path.dirname(__file__), "template")
 path_static = os.path.join(os.path.dirname(__file__), "static")
+
 cookie_secret = "bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E="
 
 
@@ -27,8 +29,12 @@ machine_no_dict = {
     'hhk-PC': 3,
     }
 
+
 '''
 log
 '''
 logfile = os.path.join('path_log', 'CYBusiness')
 LOG_LEVEL = logging.DEBUG
+
+
+

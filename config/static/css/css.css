@@ -1,0 +1,6 @@
+a,td{font-size: 12px; text-decoration:none; color:#444}
+a:hover{LEFT:1px;position:relative;top:1px;TEXT-DECORaTION:underline;color:#ff0000;font-size:12px}
+BODY{font-size:12px;margin-top:212px;COLOR:#444;BACKGROUND:#43ABDE url(/static/images/top_bg.jpg) repeat-x center top}
+input{height:21;border:1px solid #B7DFF2;line-height:17px;}
+.list{color:#006666;height:30px;BACKGROUND:url(/static/images/new_bg.jpg);text-indent:4px;}
+.list a{color:#006666}
