@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block title %}万达票类{% endblock %}
+
+{% block content %}
+<h3>万达票类排期数量</h3>
+
+{% if summary %}
+<table class="table table-striped">
+  <thead>
+    <th class="col-md-2">票类</th>
+    <th>排期数量</th>
+  </thead>
+  <tbody>
+  {% for section, cnt in summary %}
+  <tr>
+    <td>{{ section }}</td>
+    <td>{{ cnt|intcomma }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+{% endif %}
+
+{% endblock %}

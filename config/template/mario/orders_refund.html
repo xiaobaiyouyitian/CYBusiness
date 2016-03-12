@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}批量退款{% endblock %}
+{% block head %}
+<link href="/static/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+{% endblock %}
+{% block content %}
+<h3>订单批量退款</h3>
+<form method="POST">
+  {% crispy form %}
+</form>
+{% if ids %}
+  <ul>
+  {% for id in ids %}
+  <li>{{id}}</li>
+  {% endfor%}
+  </ul>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/static/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+{% endblock %}

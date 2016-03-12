@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}下发红包{% endblock %}
+
+{% block content %}
+<h3>下发红包</h3>
+
+<p><a href="http://wiki.intra.wepiao.com/pages/viewpage.action?pageId=1509550">
+    接口文档</a></p>
+
+{% crispy form %}
+
+{% if data %}
+<table class="table">
+{% for name, val in data.items %}
+<tr>
+  <th>{{ name }}</th>
+  <td>{{ val }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}

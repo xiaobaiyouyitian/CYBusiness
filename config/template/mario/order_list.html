@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Order List{% endblock %}
+{% block head %}
+<link href="/static/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block content %}
+<h3>订单查询</h3>
+
+<ul class="nav nav-tabs" id="OrderSearchTab">
+  <li {%ifequal by "" %}class="active"{% endifequal %}><a href="#CinemaNo">影院ID</a></li>
+  <li {%ifequal by "orderid" %}class="active"{% endifequal %}><a href="#OrderNo">订单ID</a></li>
+  <li {%ifequal by "openid" %}class="active"{% endifequal %}><a href="#OpenId">OpenID</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane {%ifequal by '' %}active{% endifequal %}" id="CinemaNo">
+    <form method="POST">
+      {% crispy form1 %}
+      <input type='hidden' name='by' value='' />
+      {% if orders %}
+      <div style="float:right">
+        <input type="submit" class="btn btn-link" name="download" value="下载excel" />
+      </div>
+      {% endif %}
+    </form>
+  </div>
+
+  <div class="tab-pane {%ifequal by 'orderid' %}active{% endifequal %}" id="OrderNo">
+    <form method="POST">
+      {% crispy form2 %}
+      <input type='hidden' name='by' value='orderid' />
+      {% if orders %}
+      <div style="float:right">
+        <input type="submit" class="btn btn-link" name="download" value="下载excel" />
+      </div>
+      {% endif %}
+    </form>
+  </div>
+
+  <div class="tab-pane {%ifequal by 'openid' %}active{% endifequal %}" id="OpenId">
+    <form method="POST">
+      {% crispy form3 %}
+      <input type='hidden' name='by' value='openid' />
+      {% if orders %}
+      <div style="float:right">
+        <input type="submit" class="btn btn-link" name="download" value="下载excel" />
+      </div>
+      {% endif %}
+    </form>
+  </div>
+</div>
+
+{% if notfound %}
+<h4>未查询到的订单（notfound|length）</h4>
+<ol>
+  {% for i in notfound %}
+  <li>{{ i }}</li>
+  {% endfor %}
+</ol>
+{% endif %}
+
+{% if not orders %}
+<p>查询条件：{{ select }}</p>
+<p>订单不存在</p>
+{% else %}
+<table class="table table-striped">
+  <tr>
+    <th>序列号</th>
+    <th>订单号</th>
+    <th>手机号</th>
+    <th>张数</th>
+    <th>状态</th>
+    <th>影片</th>
+    <th>放映时间</th>
+    <th>影院</th>
+    <th>影厅</th>
+    <th>座位</th>
+    <th>购买渠道</th>
+  </tr>
+  {% for o in orders %}
+  <tr>
+    <td><a target="_blank" href="http://om.wxmovie.com/CustomService/ViewOrderInfo?id={{o.id}}">
+      {{ forloop.counter }}</a></td>
+    <td>{{ o.OrderId }}</td>
+    <td>{{ o.Mobile }}</td>
+    <td>{{ o.Num }}</td>
+    <td>{{ o.Status }}</td>
+    <td>{{ o.FilmName }}</td>
+    <td>{{ o.ShowTime }}</td>
+    <td>{{ o.CinemaName }}</td>
+    <td>{{ o.BISRoomName }}</td>
+    <td>{{ o.SeatInfo }}</td>
+    <td>{{ o.SalePlatform }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $('input[name=showtime_begin], input[name=showtime_end]')
+            .parent('div')
+            .addClass('input-group date form_datetime')
+            .attr("data-date","2015-08-19 01:00:00")
+            .attr("data-date-format","yyyy-MM-dd HH:ii:ss")
+            .append($('<span>'))
+            .children('span')
+            .addClass('input-group-addon')
+            .attr("id","delete")
+            .append($('<span>'))
+            .children($('<span>'))
+            .addClass('glyphicon glyphicon-remove')
+            .parent($('<span>'))
+            .parent($('<div>'))
+            .append($('<span>'))
+            .children('span')
+            .addClass('input-group-addon')
+            .parent('div')
+            .children('span[id!=delete]')
+            .attr("id","choice")
+            .append($('<span>'))
+            .children('span')
+            .addClass('glyphicon glyphicon-th');
+</script>
+<script type="text/javascript" src="/static/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/static/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+$('.form_datetime').datetimepicker({
+    language:  'zh-CN',
+    weekStart: 0,
+    todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    forceParse: 1,
+    showMeridian: 0,
+    format: 'yyyy-mm-dd hh:ii:00',
+    minuteStep: 5
+});
+
+$('#OrderSearchTab a').click(function(e){
+    e.preventDefault();
+    $(this).tab('show');
+});
+</script>
+{%  endblock %}

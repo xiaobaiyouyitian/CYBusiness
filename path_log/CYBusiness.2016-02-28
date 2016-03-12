@@ -1,0 +1,766 @@
+15:01:18.980 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+15:01:20.344 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:01:20.344 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:03:57.33  <web.log_request:1946> [WARNING] 404 GET /favicon.ico (127.0.0.1) 131.00ms
+15:04:15.194 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:10000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:10000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 451, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: 'C:\\Users\\hhk\\Desktop\\CYBusiness\\config\\template\\api.html'
+15:04:15.509 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 315.00ms
+15:06:04.839 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+15:06:05.703 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+15:06:05.717 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:06:05.717 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:06:22.213 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+15:06:23.72  <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+15:06:23.88  <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:06:23.88  <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:07:29.84  <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+15:07:29.829 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+15:07:29.839 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:07:29.839 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:07:42.290 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:10000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:10000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 952, in _parse
+    block_body = _parse(reader, template, operator, in_loop)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'endblock' at mario/api.html:12
+15:07:42.295 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 72.00ms
+15:21:30.476 <web.log_request:1946> [WARNING] 404 GET /favicon.ico (127.0.0.1) 2173.00ms
+15:21:31.151 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:10000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:10000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 952, in _parse
+    block_body = _parse(reader, template, operator, in_loop)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 946, in _parse
+    block_body = _parse(reader, template, operator, operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'endfor' at mario/api.html:32
+15:21:31.571 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 606.00ms
+15:24:23.311 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+15:24:34.526 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+15:24:54.838 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+15:24:55.628 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:24:55.736 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:24:55.736 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:25:00.141 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+15:25:00.529 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:25:00.543 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:25:00.543 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:25:11.176 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:25:20.40  <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+15:25:20.401 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:25:20.420 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:25:20.420 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:25:58.9   <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:26:04.917 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+15:26:05.247 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:26:05.259 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:26:05.259 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:26:19.257 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+15:26:19.586 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:26:19.599 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:26:19.599 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:27:03.582 <web.log_request:1946> [WARNING] 404 GET /favicon.ico (127.0.0.1) 247.00ms
+15:27:03.588 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 451, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: 'C:\\Users\\hhk\\Desktop\\CYBusiness\\config\\template\\mario\\base.html'
+15:27:03.663 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 78.00ms
+15:28:25.138 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 451, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: 'C:\\Users\\hhk\\Desktop\\CYBusiness\\config\\template\\mario\\base.html'
+15:28:25.140 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 5.00ms
+15:28:33.788 <web.log_request:1946> [WARNING] 404 GET /favicon.ico (127.0.0.1) 2.00ms
+15:28:36.392 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 451, in _create_template
+    with open(path, "rb") as f:
+IOError: [Errno 2] No such file or directory: 'C:\\Users\\hhk\\Desktop\\CYBusiness\\config\\template\\mario\\base.html'
+15:28:36.395 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 4.00ms
+15:29:49.599 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+15:29:50.377 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:29:50.397 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:29:50.397 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:29:59.394 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+15:30:00.244 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:30:00.257 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:30:00.257 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+15:30:07.755 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'load' at mario\base.html:1
+15:30:07.760 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 39.00ms
+15:33:36.779 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'static' at mario\base.html:4
+15:33:36.782 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 5.00ms
+15:34:22.404 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'url' at mario\base.html:27
+15:34:22.405 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 3.00ms
+15:35:00.621 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'url' at mario\base.html:36
+15:35:00.624 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 5.00ms
+15:38:38.430 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'url' at mario\base.html:58
+15:38:38.433 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 7.00ms
+15:38:56.582 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'csrf_token' at mario\base.html:59
+15:38:56.585 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 6.00ms
+15:50:48.496 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'url' at mario\base.html:91
+15:50:48.500 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 5471.00ms
+15:51:07.184 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 946, in _parse
+    block_body = _parse(reader, template, operator, operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 952, in _parse
+    block_body = _parse(reader, template, operator, in_loop)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'endif' at mario\base.html:98
+15:51:07.211 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 29.00ms
+15:51:31.72  <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 806, in render_string
+    return t.generate(**namespace)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 345, in generate
+    return execute()
+  File "mario/api_html.generated.py", line 9, in _tt_execute
+    _tt_tmp = request.user  # mario\base.html:91
+AttributeError: 'HTTPServerRequest' object has no attribute 'user'
+15:51:31.305 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 9918.00ms
+15:55:56.756 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+15:59:41.446 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+15:59:41.671 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+15:59:41.671 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:00:49.730 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 10, in get
+    self.render('mario/api.html', request)
+NameError: global name 'request' is not defined
+16:00:49.855 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 126.00ms
+16:01:39.167 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:01:42.647 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:01:42.660 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:01:42.660 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:02:55.657 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:02:56.438 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:02:56.450 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:02:56.450 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:03:03.447 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:03:03.786 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:03:03.799 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:03:03.799 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:03:10.296 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:03:10.885 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:03:10.904 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:03:10.904 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:03:20.210 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 9, in get
+    self.render('mario/api.html', user)
+TypeError: render() takes exactly 2 arguments (3 given)
+16:03:20.214 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 5.00ms
+16:05:20.401 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:05:35.683 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:05:35.697 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:05:35.697 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:05:59.743 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:06:06.194 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+16:06:06.558 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:06:06.569 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:06:06.569 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:06:09.894 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:06:20.68  <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+16:06:20.404 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+16:06:20.423 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:06:20.423 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:06:41.684 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:10000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:10000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+TypeError: get() takes exactly 2 arguments (1 given)
+16:06:41.687 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 4.00ms
+16:07:31.917 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:07:32.562 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+16:07:32.575 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:07:32.575 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:07:42.72  <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:07:42.430 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+16:07:42.441 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:07:42.441 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:07:45.239 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:10000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:10000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 9, in get
+    self.render('mario/api.html', user)
+TypeError: render() takes exactly 2 arguments (3 given)
+16:07:45.246 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 7.00ms
+16:14:02.940 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:14:03.822 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+16:14:03.835 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:14:03.835 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:14:06.832 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:14:07.611 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+16:14:07.631 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:14:07.631 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:14:25.6   <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:10000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:10000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html', {'user': 'hello'})
+TypeError: render() takes exactly 2 arguments (3 given)
+16:14:25.9   <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 3.00ms
+16:18:57.979 <CYBusiness.main:63> [CRITICAL] www listening on port : 10000
+16:19:04.625 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+16:19:05.94  <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:19:05.111 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:19:05.111 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:19:10.608 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+16:19:10.941 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:19:10.953 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:19:10.954 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:19:23.355 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html', {'user': 'hello'})
+TypeError: render() takes exactly 2 arguments (3 given)
+16:19:23.358 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 6.00ms
+16:22:33.951 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:22:34.707 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:22:34.721 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:22:34.723 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:22:47.392 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 806, in render_string
+    return t.generate(**namespace)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 345, in generate
+    return execute()
+  File "mario/api_html.generated.py", line 9, in _tt_execute
+    for msg in messages:  # mario\base.html:97
+NameError: global name 'messages' is not defined
+16:22:48.927 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 4605.00ms
+16:23:41.217 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:23:41.602 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:23:41.617 <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:23:41.617 <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:24:01.614 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+16:24:02.49  <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:24:02.66  <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\template
+16:24:02.66  <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\config\static
+16:24:33.696 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 806, in render_string
+    return t.generate(**namespace)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 345, in generate
+    return execute()
+  File "mario/api_html.generated.py", line 9, in _tt_execute
+    for msg in messages:  # mario\base.html:97
+NameError: global name 'messages' is not defined
+16:24:33.700 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 39.00ms
+16:28:04.990 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 806, in render_string
+    return t.generate(**namespace)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 345, in generate
+    return execute()
+  File "mario/api_html.generated.py", line 9, in _tt_execute
+    for msg in messages:  # mario\base.html:97
+NameError: global name 'messages' is not defined
+16:28:04.993 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 18.00ms
+16:28:09.45  <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 806, in render_string
+    return t.generate(**namespace)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 345, in generate
+    return execute()
+  File "mario/api_html.generated.py", line 9, in _tt_execute
+    for msg in messages:  # mario\base.html:97
+NameError: global name 'messages' is not defined
+16:28:09.49  <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 18.00ms
+16:28:56.858 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 806, in render_string
+    return t.generate(**namespace)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 345, in generate
+    return execute()
+  File "mario/api_html.generated.py", line 9, in _tt_execute
+    for msg in messages:  # mario\base.html:97
+NameError: global name 'messages' is not defined
+16:28:56.861 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 23.00ms
+16:30:34.519 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 806, in render_string
+    return t.generate(**namespace)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 345, in generate
+    return execute()
+  File "mario/api_html.generated.py", line 10, in _tt_execute
+    for s in serv1:  # mario/api.html:26 (via mario\base.html:97)
+NameError: global name 'serv1' is not defined
+16:30:34.523 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 14.00ms
+16:32:14.549 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 806, in render_string
+    return t.generate(**namespace)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 345, in generate
+    return execute()
+  File "mario/api_html.generated.py", line 10, in _tt_execute
+    for s in serv2:  # mario/api.html:35 (via mario\base.html:97)
+NameError: global name 'serv2' is not defined
+16:32:14.555 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 22.00ms
+16:32:35.668 <web.log_request:1946> [INFO] 200 GET /api/ (127.0.0.1) 14.00ms
+16:33:45.811 <web.log_exception:1524> [ERROR] Uncaught exception GET /api/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='GET', uri='/api/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate,sdch', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Cache-Control': 'max-age=0', 'If-None-Match': '"368b0101e67e4e39db8b144dd580fdc252fd329b"'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 8, in get
+    self.render('mario/api.html')
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 699, in render
+    html = self.render_string(template_name, **kwargs)
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 803, in render_string
+    t = loader.load(template_name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 304, in __init__
+    self.code = self._generate_python(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 352, in _generate_python
+    ancestors = self._get_ancestors(loader)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 370, in _get_ancestors
+    template = loader.load(chunk.name, self.name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 424, in load
+    self.templates[name] = self._create_template(name)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 452, in _create_template
+    template = Template(f.read(), name=name, loader=self)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 303, in __init__
+    self.file = _File(self, _parse(reader, self))
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 975, in _parse
+    reader.raise_parse_error("unknown operator: %r" % operator)
+  File "D:\Python27\lib\site-packages\tornado\template.py", line 785, in raise_parse_error
+    raise ParseError(msg, self.name, self.line)
+ParseError: unknown operator: 'xsrf_form_html' at mario\base.html:59
+16:33:45.815 <web.log_request:1946> [ERROR] 500 GET /api/ (127.0.0.1) 7.00ms
+16:34:11.605 <web.log_request:1946> [INFO] 200 GET /api/ (127.0.0.1) 14.00ms
+08:51:05.803 <web.log_request:1946> [INFO] 304 GET /api/ (127.0.0.1) 28683.00ms
+08:51:09.234 <web.log_request:1946> [INFO] 200 GET /api/ (127.0.0.1) 2548.00ms
+11:48:18.887 <web.log_request:1946> [INFO] 200 GET /api/ (127.0.0.1) 10782.00ms

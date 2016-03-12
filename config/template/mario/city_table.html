@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}city_table{% endblock %}
+
+{% block content %}
+<h3>城市列表 ({{ cities|length }})</h3>
+
+<table class='table table-striped'>
+  <thead>
+    <tr>
+      <th>编码</th>
+      <th>城市</th>
+      <th>拼音</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for city in cities %}
+    <tr>
+      <td>{{ city.code }}</td>
+      <td>{{ city.name }}</td>
+      <td>{{ city.pinyin }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

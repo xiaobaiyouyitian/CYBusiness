@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}查询红包{% endblock %}
+
+{% block content %}
+<h3>查询红包</h3>
+
+<p><a href="http://wiki.intra.wepiao.com/pages/viewpage.action?pageId=1509550">
+    接口文档</a></p>
+
+{% crispy form %}
+
+{% if not bonus %}
+<p>红包不存在</p>
+{% endif %}
+
+{% if bonus %}
+<h3>红包 ({{ bonus|length }})</h3>
+<table class="table">
+  <tr>
+    <th>名称</th>
+    <th>类型</th>
+    <th>状态</th>
+    <th>可用余额</th>
+    <th>价值金额</th>
+    <th>过期时间</th>
+    <th>限定影院</th>
+    <th>限定影片</th>
+    <th>限定版本</th>
+    <th>资源ID</th>
+    <th>抵值ID</th>
+    <th>红包ID</th>
+    <th>详情</th>
+  </tr>
+  {% for b in bonus %}
+  <tr>
+    <td>{{ b.iBonusName }}</td>
+    <td>{{ b.iResourceType_display }}</td>
+    <td>{{ b.iStatus_display }}</td>
+    <td>{{ b.iBonusPrice }}</td>
+    <td>{{ b.iBonusValue }}</td>
+    <td>{{ b.sDueTime }}</td>
+    <td>{{ b.sCinema }}</td>
+    <td>{{ b.sMovieList }}</td>
+    <td>{{ b.sVersion }}</td>
+    <td>{{ b.iBonusValueID }}</td>
+    <td>{{ b.iBonusID }}</td>
+    <td>{{ b.iBonusResourceID }}</td>
+    <td>{{ b.sRichReminder }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+{% if not presell %}
+<p>预售券不存在</p>
+{% endif %}
+
+{%if presell %}
+<h3>预售券 ({{ presell|length }})</h3>
+<table class="table">
+  <tr>
+    <th>名称</th>
+    <th>预售码状态</th>
+    <th>预售券减至金额</th>
+    <th> 退款保障</th>
+    <th> 限定影片</th>
+    <th> 限定影院</th>
+    <th> 限定版本</th>
+    <th>领取时间</th>
+    <th>过期时间</th>
+    <th>原价</th>
+    <th>售卖价</th>
+    <th>可使用的价格限制</th>
+    <th>预售券ID</th>
+    <th>活动ID</th>
+    <th>订单ID</th>
+    <th>详情</th>
+  </tr>
+  {% for p in presell %}
+  <tr>
+    <td>{{ p.sPresellName }}</td>
+    <td>{{ p.iStatus }}</td>
+    <td>{{ p.iReduceEndValue }}</td>
+    <td>{{ p.iRefundType }}</td>
+    <td>{{ p.sMovieList }}</td>
+    <td>{{ p.sCinema }}</td>
+    <td>{{ p.sVersion }}</td>
+    <td>{{ p.sReceiveTime }}</td>
+    <td>{{p.sDueTime}}</td>
+    <td>{{ p.iOriPrice }}</td>
+    <td>{{ p.iSellPrice }}</td>
+    <td>{{ p.iLimitPrice }}</td>
+    <td>{{ p.iPresellID }}</td>
+    <td>{{ p.iPresellActivityID }}</td>
+    <td>{{ p.iBuyOrderId }}</td>
+    <td>{{ p.sRichReminder }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endif %}
+
+{% endblock %}
+

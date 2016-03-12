@@ -1,0 +1,188 @@
+﻿{% extends "base.html" %}
+{% load datetime_utils %}
+
+{% block content %}
+<h3>影院排期检查</h3>
+
+<table class="table">
+  <tr>
+    <th>Base影院</th>
+    <td>
+      {{ cinema.BaseCinemaName }}
+      ({{ cinema.BaseCinemaNo }})
+    </td>
+  </tr>
+  <tr>
+    <th>位置</th>
+    <td>
+      {{ cinema.BaseCityName }} ({{ city_id }}),
+      {{ cinema.BaseRegionPathStr }},
+      {{ cinema.BaseCinemaAddress }}
+    </td>
+  </tr>
+  <tr>
+    <th>BISServer</th>
+    <td>{{ cinema.serv.ServerName }} {{ cinema.BISServerId }}</td>
+  </tr>
+  <tr>
+    <th>BIS影院</th>
+    <td>
+      {{ cinema.CinemaName }}
+      ({{ cinema.CinemaNo }})
+    </td>
+  </tr>
+  <tr>
+    <th>LinkId</th>
+    <td>{{ cinema.CinemaLinkId }}</td>
+  </tr>
+  <tr>
+    <th>影院页面</th>
+    <td><a target="_blank" href="http://m.wepiao.com/cinema_detail.html?cinema_id={{cinema.BaseCinemaNo}}&city_id={{city_id}}">
+        http://m.wepiao.com/cinema_detail.html?cinema_id={{cinema.BaseCinemaNo}}&city_id={{city_id}}</a>
+    </td>
+  </tr>
+</table>
+
+<div>
+  <ul>
+    {% if raw_link %}
+    <li>接入商原始排期
+      <a target="_blank" href="{{ raw_link }}">{{ raw_link }}</a>
+    </li>
+    <li></li>
+    {% endif %}
+
+    <li>小工具显示的原始排期
+      <a target="_blank" href="{% url 'proxy' org_list %}">{{ org_list }}</a>
+    </li>
+    <li></li>
+
+    <li>DB排期
+      <a target="_blank" href="{% url 'proxy' bms_list %}">{{ bms_list }}</a>
+    </li>
+    <li>手动触发拉排期
+      <a target="_blank" href="{% url 'proxy' bms_get %}">{{ bms_get }}</a>
+    </li>
+    <li></li>
+
+    <li>批价后的排期
+      <a target="_blank" href="{% url 'proxy' sp_list %}">{{ sp_list }}</a>
+    </li>
+    <li>手动触发批价
+      <a target="_blank" href="{% url 'proxy' sp_get %}">{{ sp_get }}</a>
+    </li>
+    <li></li>
+
+    <li>匹配活动后排期
+      <a target="_blank" href="{% url 'proxy' spd_list %}">{{ spd_list }}</a>
+    </li>
+    <li>手动触发活动匹配
+      <a target="_blank" href="{% url 'proxy' spd_get %}">{{ spd_get }}</a>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h3>排期比较</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>影片</th>
+        <th>时间</th>
+        <th>最低</th>
+        <th>标准</th>
+        <th>结算</th>
+        <th>编码</th>
+        <th>类型</th>
+        <th>|</th>
+
+        <th>影片</th>
+        <th>时间</th>
+        <th>|</th>
+
+        <th>渠道</th>
+        <th>结算</th>
+        <th>实际</th>
+        <th>|</th>
+
+        <th>渠道</th>
+        <th>定价</th>
+        <th>优惠</th>
+        <th>新用户</th>
+        <th>活动</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for matched, org, bms, sp, spd in rows %}
+      {% if matched %}
+      <tr>
+      {% else %}
+      <tr style="color:red">
+      {% endif %}
+
+      {% if org %}
+      <td>
+        {{ org.filmName }}
+        {{ org.showType }}
+        {{ org.language }}
+        {{ org.hallName }}
+      </td>
+      <td>
+        {{ org.showDate }} {{ org.showTime }}
+      </td>
+      <td>{{ org.lowestPrice|price }}</td>
+      <td>{{ org.salePrice|price }}</td>
+      <td>{{ org.settlementPrice|price }}</td>
+      <td>{{ org.filmNo }}</td>
+      <td>{{ org.filmType }}</td>
+      {% else %}
+      <td colspan="7">&nbsp;</td>
+      {% endif %}
+      <td>|</td>
+
+      {% if bms %}
+      <td>
+        {{ bms.movieName }}
+        {{ bms.showType }}
+        {{ bms.language }}
+        {{ bms.hallName }}
+      </td>
+      <td>
+        {{ bms.showDate|timestamp_to_date }}
+        {{ bms.showTime }}
+      </td>
+      {% else %}
+      <td colspan="2">&nbsp;</td>
+      {% endif %}
+      <td>|</td>
+
+      {% if sp %}
+      <td>{{ sp.tpId }}</td>
+      <td>{{ sp.settlementPrice|price }}</td>
+      <td>{{ sp.actualSellPrice|price }}</td>
+      {% else %}
+      <td colspan="3">&nbsp;</td>
+      {% endif %}
+      <td>|</td>
+
+      {% if spd %}
+      <td>{{ spd.tpId }}</td>
+      <td>{{ spd.calculatedPrice }}</td>
+      <td>{{ spd.discountPrice|price }}</td>
+      <td>{{ spd.discountPriceForNew|price }}</td>
+      <td>
+        {{ spd.salesTips }}
+        {% if spd.discountId %}
+        ( {{ spd.discountId }} )
+        {% endif %}
+      </td>
+      {% else %}
+      <td colspan="5">&nbsp;</td>
+      {% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

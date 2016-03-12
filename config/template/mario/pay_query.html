@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h3>{{ title }}</h3>
+
+<p>说明：</p>
+<ul>
+  <li>商户订单号有两种格式，请分别尝试：
+    <ol>
+      <li>微影订单号 下划线 金额（单位分），例如：150829084900437971_3800</li>
+      <li>微影订单号，例如：150829084900437971</li>
+    </ol>
+  </li>
+  <li>商户订单号和支付平台流水号都填时，以流水号为准。</li>
+</ul>
+
+{% crispy form %}
+
+{% if res %}
+<h3>查询结果</h3>
+<table class="table">
+{% for tag, val in res.items %}
+<tr>
+  <th>{{ tag }}</th>
+  <td>{{ val }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endif %}
+
+{% if xml %}
+<h3>原始报文</h3>
+<pre>{{ xml }}</pre>
+{% endif %}
+
+{% endblock %}

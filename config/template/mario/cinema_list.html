@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Cinema List{% endblock %}
+
+{% block head %}
+<style>
+form {
+  margin-bottom: 1em;
+}
+.match {
+  background-color: yellow;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<h3>影院查询</h3>
+
+{% crispy form %}
+
+<table class='table'>
+  <tr>
+    <th>影院ID</th>
+    <th>详细信息</th>
+  </tr>
+  {% for hit in hits %}
+  <tr>
+    <td>{{ hit.cinema_id }}</td>
+    <td><pre>{{ hit.content }}</pre></td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}

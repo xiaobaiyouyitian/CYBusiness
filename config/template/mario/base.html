@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{%block title %}大杂烩{%end%}</title>
+    <link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.1/css/bootstrap.min.css">
+    <style>
+      form {
+      margin-bottom: 1em;
+      }
+    </style>
+    {%block head%}{%end%}
+  </head>
+  <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">大杂烩</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              优惠<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">查红包</a></li>
+              <li><a href="#">发红包</a></li>
+              <li><a href="#">恢复优惠资格</a></li>
+              <li><a href="#">兑换券验证码状态查询/作废</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              订单<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">批量导订单</a></li>
+              <li><a href="#">批量退款</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">补单</a></li>
+              <li><a href="#">原路径退款（暂不支持）</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">微信支付查询（微信电影票，公众号）</a></li>
+              <li><a href="#">财付通查询（App，qq票务，手q）</a></li>
+              <li><a href="#">支付宝查询（App）</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form action="#" method="POST" class="navbar-form navbar-left" role="search">
+
+          <div class="form-group">
+            <input type="text" name="keyword" class="form-control" placeholder="输入关键字">
+          </div>
+          <button class="btn btn-default">查影院</button>
+        </form>
+        <form action="/play_check/" method="GET" class="navbar-form navbar-left rest-form" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="输入七位影院ID">
+          </div>
+          <button class="btn btn-default">查排期</button>
+        </form>
+        <form action="/order_error/" method="GET" class="navbar-form navbar-left rest-form" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="输入订单号">
+          </div>
+          <button class="btn btn-default">查订单错误</button>
+        </form>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              其他<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">城市列表</a></li>
+              <li><a href="/lice" target="_blank">问题列表</a></li>
+              <li><a href="#">订单类错误汇总</a></li>
+              <li><a href="#">万达票类</a></li>
+              <li><a href="#">用户活动数据</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">注销</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <div style="margin-left:1em; margin-right:1em;">{% block content %}{% end %}</div>
+  <script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+  <script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script>
+$('.rest-form').each(function() {
+    var that = this;
+    $('button', this).click(function() {
+	var form = $(that);
+	var action = form.attr("action");
+	var val = form.find('input[type=text]').val();
+	var url = action + val;
+	form.attr("action", url);
+	return true;
+    });
+});
+  </script>
+  {% block scripts %}{% end %}
+  </body>
+</html>

@@ -35,20 +35,22 @@ class Application(tornado.web.Application):
 	)
         
         handlers = [
-            (r'/login/', user.LoginHandler),
-            (r'/top/', user.TopHandler),
-            (r'/admin/', user.AdminHandler),
-            (r'/admin2/', user.Admin2Handler),
-            (r'/admin3/', user.Admin3Handler),
-            (r'/admin4/', user.Admin4Handler),
-            (r'/admin5/', user.Admin5Handler),
-            (r'/admin6/', user.Admin6Handler),
-            (r'/admin7/', user.Admin7Handler),
-            (r'/admin8/', user.Admin8Handler),
-            (r'/admin9/', user.Admin9Handler),
-            (r'/admin10/', user.Admin10Handler),
-            (r'/admin11/', user.Admin11Handler),
-            (r'/admin12/', user.Admin12Handler),
+            (r'/api/', user.ApiHandler),
+            (r'/back/bonus/presell/', user.BackBbonusPpresellHandler),
+            (r'/cinema/list/', user.CinemaListHandler),
+            (r'/city/table/', user.CityTableHandler),
+            (r'/get/bonus/', user.GetBonusHandler),
+            (r'/order/confirm/', user.OrderConfirmHandler),
+            (r'/order/error/', user.OrderErrorHandler),
+            (r'/order/error/summary/', user.OrderErrorSummaryHandler),
+            (r'/order/list/', user.OrderListHandler),
+            (r'/orders/refund/', user.OrdersRefundHandler),
+            (r'/pay/query/', user.PayQueryHandler),
+            (r'/play/check/', user.PlayCheckHandler),
+            (r'/qryinvalidcode/', user.QryinvalidcodeHandler),
+            (r'/query/bonus/', user.QueryBonusHandler),
+            (r'/user/active/info/', user.UserActiveInfoHandler),
+            (r'/wanda/sections/', user.WandaSectionsHandler),
 	]
 
 	tornado.web.Application.__init__(self, handlers, **settings)
@@ -67,6 +69,6 @@ def main(p_port):
 
 
 if __name__ == '__main__':
-    main(10000)
+    main(8000)
 
 

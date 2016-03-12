@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load datetime_utils %}
+
+{% block title %}Order Error{% endblock %}
+
+{% block content %}
+<h3>订单错误查询</h3>
+
+<p>订单号：{{ orderid }}</p>
+
+{% if not errors %}
+<p>未查询到该订单的任何错误信息~</p>
+{% else %}
+
+{% for err in errors %}
+<table class="table table-striped">
+  <tr>
+    <th>接入商</th>
+    <td>{{ err.BisPlatformType }} {{ err.BisPlatformName }} {{ err.BisServerId }}</td>
+  </tr>
+  <tr>
+    <th>BIS影院编码</th>
+    <td>{{ err.CinemaNo }}</td>
+  </tr>
+  <tr>
+  <tr>
+    <th>错误编码</th>
+    <td>{{ err.ErrorCode }}</td>
+  </tr>
+  <tr>
+    <th>错误消息</th>
+    <td>{{ err.ErrorMsg }}</td>
+  </tr>
+  <tr>
+    <th>操作时间</th>
+    <td>{{ err.OperateDate|utc2local }}</td>
+  </tr>
+  <tr>
+    <th>花费时间</th>
+    <td>{{ err.ConsumeTime }}</td>
+  </tr>
+  <tr>
+    <th>请求参数</th>
+    <td>{{ err.ReqParams }}</td>
+  </tr>
+  <tr>
+    <th>返回报文</th>
+    <td>{{ err.RespParams }}</td>
+  </tr>
+</table>
+{% endfor %}
+
+{% endif %}
+
+{% endblock %}

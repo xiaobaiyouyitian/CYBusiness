@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}补单{% endblock %}
+
+{% block content %}
+<h3>补单</h3>
+
+<p>说明：对于当日或昨天的丢单，可以进行补单。
+  然后通过OM申请退款，人工审核后系统会进行原路径退款，
+  同时也会恢复优惠活动的资格。</p>
+
+{% if out_trade_no %}
+<ul>
+  <li>商户订单号：{{ out_trade_no }}</li>
+  <li>金额（单位分）：{{ total_fee }}</li>
+  <li>支付平台流水号：{{ transaction_id }}</li>
+</ul>
+<p>请确认订单号和金额无误后，点击提交进行补单~</p>
+
+<form action="{% url 'order_confirm_call' %}" method="POST">
+  {% csrf_token %}
+  <input type='hidden' name='out_trade_no' value='{{ out_trade_no }}' />
+  <input type='hidden' name='total_fee' value='{{ total_fee }}' />
+  <input type='hidden' name='transaction_id' value='{{ transaction_id }}' />
+  <input type="submit" value="提交" class="btn btn-danger" />
+</form>
+
+{% else %}
+{% crispy form %}
+{% endif %}
+
+{% if xml %}
+<div>
+  <h4>支付平台原始报文：</h4>
+  <pre>{{ xml }}</pre></div>
+{% endif %}
+
+{% endblock %}
