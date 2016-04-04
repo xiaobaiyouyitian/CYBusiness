@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+      body { font-family: "微软雅黑"; }
+      div { height:60px; background-color: #0CF }
+	  .div-form { margin: 0 auto; }
+	  input { height:30px; border-radius: 6px; }
+</style>
+<title>Login</title>
+</head>
+
+<body>
+<div>
+<div class="div-form">
+<form id="form1" name="form1" method="post" action=".">
+    <label for="name">用户</label>
+    <input name="name" type="text" id="name" size="25" maxlength="20" placeholder="输入用户名"/>
+
+    <label for="password">密码</label>
+    <input name="password" type="password" id="password" size="25" maxlength="6" placeholder="输入密码" />
+ 
+    <input type="submit" name="login" id="login" value="提交" />
+</form>
+{% if notice %}
+    <p>提醒: {{ notice }}</p>
+{% end %}
+</div>
+</div>
+</body>
+</html>

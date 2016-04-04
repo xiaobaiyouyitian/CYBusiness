@@ -1,0 +1,177 @@
+16:40:52.948 <CYBusiness.main:63> [CRITICAL] www listening on port : 8000
+16:40:53.42  <CYBusiness.main:66> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+16:40:53.42  <CYBusiness.main:67> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+16:43:14.709 <web.log_request:1946> [WARNING] 404 GET /favicon.ico (127.0.0.1) 67.00ms
+16:43:23.875 <web.log_request:1946> [INFO] 200 GET /api/ (127.0.0.1) 465.00ms
+16:56:41.887 <web.log_request:1946> [WARNING] 404 GET /favicon.ico (127.0.0.1) 108.00ms
+17:01:14.582 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+17:01:16.875 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:08:17.918 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:08:18.33  <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:08:18.33  <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:08:24.153 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 22.00ms
+17:08:49.776 <web.log_request:1946> [WARNING] 404 POST /login/action (127.0.0.1) 2.00ms
+17:10:17.352 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 0.00ms
+17:10:27.917 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 0.00ms
+17:11:34.25  <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+17:11:34.882 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:11:34.898 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:11:34.898 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:11:54.651 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 21.00ms
+17:12:04.812 <web.log_exception:1524> [ERROR] Uncaught exception POST /login/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/login/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '64', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/login/', 'Cache-Control': 'max-age=0', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 13, in post
+    log.i('name=%s, password=%s') % (name, password)
+NameError: global name 'log' is not defined
+17:12:04.812 <web.log_request:1946> [ERROR] 500 POST /login/ (127.0.0.1) 0.00ms
+17:12:17.892 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+17:16:48.176 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:16:48.186 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:16:48.186 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:16:54.957 <web.log_request:1946> [INFO] 304 GET /login/ (127.0.0.1) 15.00ms
+17:17:04.273 <user.post:16> [INFO] name=%s, password=%s
+17:17:04.273 <web.log_exception:1524> [ERROR] Uncaught exception POST /login/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/login/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '64', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/login/', 'Cache-Control': 'max-age=0', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 16, in post
+    log.i('name=%s, password=%s') % (name, password)
+TypeError: unsupported operand type(s) for %: 'NoneType' and 'tuple'
+17:17:04.273 <web.log_request:1946> [ERROR] 500 POST /login/ (127.0.0.1) 0.00ms
+17:17:41.188 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+17:17:42.421 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:17:42.437 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:17:42.437 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:18:07.448 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+17:18:07.730 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:18:07.744 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:18:07.744 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:18:10.206 <web.log_request:1946> [INFO] 304 GET /login/ (127.0.0.1) 10.00ms
+17:18:18.670 <user.post:16> [INFO] <type 'unicode'>
+17:18:18.670 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 0.00ms
+17:19:46.747 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+17:19:47.65  <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:19:47.75  <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:19:47.75  <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:19:53.313 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 15.00ms
+17:20:00.683 <user.post:16> [INFO] <type 'unicode'>
+17:20:00.683 <user.post:17> [INFO] <type 'unicode'>
+17:20:00.683 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 0.00ms
+17:20:49.78  <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+17:20:49.374 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:20:49.390 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:20:49.390 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:20:50.532 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 6.00ms
+17:20:57.605 <user.post:16> [INFO] 王鹏
+17:20:57.605 <user.post:17> [INFO] 123456
+17:20:57.605 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 0.00ms
+17:21:28.887 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+17:21:29.183 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:21:29.198 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:21:29.198 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:21:30.555 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 0.00ms
+17:21:37.759 <user.post:16> [INFO] name=%s, password=%s
+17:21:37.760 <web.log_exception:1524> [ERROR] Uncaught exception POST /login/ (127.0.0.1)
+HTTPServerRequest(protocol='http', host='127.0.0.1:8000', method='POST', uri='/login/', version='HTTP/1.1', remote_ip='127.0.0.1', headers={'Origin': 'http://127.0.0.1:8000', 'Content-Length': '64', 'Accept-Language': 'zh-CN,zh;q=0.8', 'Accept-Encoding': 'gzip,deflate', 'Host': '127.0.0.1:8000', 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8', 'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.122 Safari/537.36 SE 2.X MetaSr 1.0', 'Connection': 'keep-alive', 'Referer': 'http://127.0.0.1:8000/login/', 'Cache-Control': 'max-age=0', 'Content-Type': 'application/x-www-form-urlencoded'})
+Traceback (most recent call last):
+  File "D:\Python27\lib\site-packages\tornado\web.py", line 1443, in _execute
+    result = method(*self.path_args, **self.path_kwargs)
+  File "C:\Users\hhk\Desktop\CYBusiness\views\user.py", line 16, in post
+    log.i('name=%s, password=%s') % (str(name), str(password))
+TypeError: unsupported operand type(s) for %: 'NoneType' and 'tuple'
+17:21:37.763 <web.log_request:1946> [ERROR] 500 POST /login/ (127.0.0.1) 3.00ms
+17:21:43.529 <web.log_request:1946> [INFO] 304 GET /login/ (127.0.0.1) 2.00ms
+17:22:11.190 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+17:22:11.471 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+17:22:11.486 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+17:22:11.486 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+17:22:20.917 <user.post:16> [INFO] name=为瓜分二, password=32445w
+17:22:20.917 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 16.00ms
+17:22:45.984 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:20:14.631 <CYBusiness.main:49> [CRITICAL] www listening on port : 8000
+18:20:14.773 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:20:14.773 <CYBusiness.main:53> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:20:17.707 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 37.00ms
+18:20:33.539 <torndb._execute:236> [ERROR] Error connecting to MySQL on localhost
+18:20:33.539 <user.post:27> [INFO] (1054, "Unknown column 'xiaoli' in 'where clause'")
+18:20:33.540 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 649.00ms
+18:25:44.746 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\models\sql.py modified; restarting server
+18:25:45.651 <CYBusiness.main:49> [CRITICAL] www listening on port : 8000
+18:25:45.661 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:25:45.661 <CYBusiness.main:53> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:25:50.246 <CYBusiness.main:49> [CRITICAL] www listening on port : 8000
+18:25:58.43  <CYBusiness.main:49> [CRITICAL] www listening on port : 8000
+18:27:07.170 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:27:07.545 <CYBusiness.main:49> [CRITICAL] www listening on port : 8000
+18:27:07.559 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:27:07.559 <CYBusiness.main:53> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:27:42.72  <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:27:42.410 <CYBusiness.main:49> [CRITICAL] www listening on port : 8000
+18:27:42.420 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:27:42.420 <CYBusiness.main:53> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:28:03.921 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:28:04.276 <CYBusiness.main:49> [CRITICAL] www listening on port : 8000
+18:29:42.910 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+18:29:42.924 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:29:42.924 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:29:50.293 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 15.00ms
+18:29:57.657 <user.post:27> [INFO] global name 'passowrd' is not defined
+18:29:57.657 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 0.00ms
+18:31:48.927 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\models\sql.py modified; restarting server
+18:31:49.707 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+18:31:49.717 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:31:49.719 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:31:55.713 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:31:56.82  <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+18:31:56.92  <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:31:56.92  <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:32:02.894 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+18:32:31.487 <CYBusiness.main:48> [CRITICAL] www listening on port : 8000
+18:32:45.601 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+18:32:46.414 <CYBusiness.main:48> [CRITICAL] www listening on port : 8888
+18:32:46.430 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:32:46.430 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:32:56.108 <CYBusiness.main:48> [CRITICAL] www listening on port : 8888
+18:33:02.941 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+18:33:03.658 <CYBusiness.main:48> [CRITICAL] www listening on port : 8888
+18:33:03.674 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:33:03.674 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:33:15.759 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 13.00ms
+18:33:15.851 <web.log_request:1946> [WARNING] 404 GET /favicon.ico (127.0.0.1) 81.00ms
+18:33:25.677 <user.post:27> [INFO] render() takes exactly 2 arguments (3 given)
+18:33:25.677 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 149.00ms
+18:34:20.171 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:34:20.825 <CYBusiness.main:48> [CRITICAL] www listening on port : 8888
+18:34:20.842 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:34:20.842 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:34:35.240 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 0.00ms
+18:34:44.776 <user.post:27> [INFO] global name 'name' is not defined
+18:34:44.776 <web.log_request:1946> [INFO] 200 POST /login/ (127.0.0.1) 0.00ms
+18:39:34.828 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:39:35.177 <CYBusiness.main:48> [CRITICAL] www listening on port : 8888
+18:39:35.183 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:39:35.184 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:39:36.180 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:39:36.523 <CYBusiness.main:48> [CRITICAL] www listening on port : 8888
+18:39:36.530 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:39:36.532 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:39:45.528 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:39:45.874 <CYBusiness.main:48> [CRITICAL] www listening on port : 8888
+18:39:45.881 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:39:45.881 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:39:57.380 <autoreload._check_file:204> [INFO] C:\Users\hhk\Desktop\CYBusiness\views\user.py modified; restarting server
+18:39:57.736 <CYBusiness.main:48> [CRITICAL] www listening on port : 8888
+18:39:57.742 <CYBusiness.main:51> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:39:57.744 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:40:22.743 <autoreload._check_file:204> [INFO] CYBusiness.py modified; restarting server
+18:40:23.75  <CYBusiness.main:49> [CRITICAL] www listening on port : 8888
+18:41:26.177 <CYBusiness.main:49> [CRITICAL] www listening on port : 8888
+18:41:26.184 <CYBusiness.main:52> [INFO] C:\Users\hhk\Desktop\CYBusiness\template
+18:41:26.184 <CYBusiness.main:53> [INFO] C:\Users\hhk\Desktop\CYBusiness\static
+18:41:28.841 <web.log_request:1946> [INFO] 200 GET /login/ (127.0.0.1) 10.00ms
+18:41:34.796 <web.log_request:1946> [INFO] 302 POST /login/ (127.0.0.1) 2.00ms
+18:41:34.871 <web.log_request:1946> [INFO] 200 GET /index/ (127.0.0.1) 0.00ms

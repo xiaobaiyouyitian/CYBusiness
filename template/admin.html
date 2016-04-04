@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+    div { height:60px; background-color: #0CF }
+</style>
+<title>admin</title>
+</head>
+
+<body>
+<div class=title>
+    <h3>欢迎光临: {{ name }}</h3>
+</div>
+
+<p><a href="/admin/check/goods/">查看全部商品</a></p>
+<p><a href="/admin/check/types/goods/">点击查看分类商品</a></p>
+<p><a href="/admin/public/goods/">发布商品</a></p>
+
+
+<form id="form1" name="form1" method="get" action="/admin/logout/">
+    <input type="submit" name="logout" id="logout" value="登出" />
+</form>
+</body>
+</html>

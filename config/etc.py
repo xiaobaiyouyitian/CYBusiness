@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #coding:utf-8
 
+import sys
 import os
 import logging
 
@@ -8,8 +9,10 @@ import logging
 Applcation etc
 '''
 
-path_tempalte = os.path.join(os.path.dirname(__file__), "template")
-path_static = os.path.join(os.path.dirname(__file__), "static")
+path_tempalte = os.path.join(sys.path[0], "template")
+path_static = os.path.join(sys.path[0], "static")
+
+cookie_name = 'cyb_cookie'
 
 cookie_secret = "bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E="
 

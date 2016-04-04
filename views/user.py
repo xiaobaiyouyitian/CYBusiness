@@ -3,125 +3,36 @@
 
 import tornado.web
 
-class ApiHandler(tornado.web.RequestHandler):
+from config import etc
+from utils import log
+from models import sql
+from tornado import gen
+
+class LoginHandler(tornado.web.RequestHandler):
+
+    @gen.coroutine
     def get(self):
-        self.render('mario/api.html')
+        self.render('login.html')
 
+    @gen.coroutine
     def post(self):
-        pass
+        try:
+            name = self.get_argument('name')
+            password = self.get_argument('password')
+            if not name or not password:
+                self.render('login.html')
+            if sql.user_base(name, password):
+                self.redirect('/index/')
+        except Exception, e:
+            log.i(e)
 
-class BackBbonusPpresellHandler(tornado.web.RequestHandler):
+
+
+class IndexHandler(tornado.web.RequestHandler):
+
+    @gen.coroutine
     def get(self):
-        self.render('mario/back_bonus_presell.html')
-
-    def post(self):
-        pass
-
-class CinemaListHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/cinema_list.html')
-
-    def post(self):
-        pass
-
-class CityTableHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/city_table.html')
-
-    def post(self):
-        pass
-
-class GetBonusHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/get_bonus.html')
-
-    def post(self):
-        pass
-
-class OrderConfirmHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/order_confirm.html')
-
-    def post(self):
-        pass
-
-class OrderErrorHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/order_error.html')
-
-    def post(self):
-        pass
-
-class OrderErrorSummaryHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/order_error_summary.html')
-
-    def post(self):
-        pass
-
-
-class OrderListHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/order_list.html')
-
-    def post(self):
-        pass
-
-
-class OrdersRefundHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/orders_refund.html')
-
-    def post(self):
-        pass
-
-class PayQueryHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/pay_query.html')
-
-    def post(self):
-        pass
-
-
-class PlayCheckHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/play_check.html')
-
-    def post(self):
-        pass
-
-class QryinvalidcodeHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/qryinvalidcode.html')
-
-    def post(self):
-        pass
-
-class QueryBonusHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/query_bonus.html')
-
-    def post(self):
-        pass
-
-class UserActiveInfoHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/user_active_info.html')
-
-    def post(self):
-        pass
-
-
-class WandaSectionsHandler(tornado.web.RequestHandler):
-    def get(self):
-        self.render('mario/wanda_sections.html')
-
-    def post(self):
-        pass
-
-
-
-
+        self.render('index.html')
 
 
 

@@ -15,7 +15,7 @@ import tornado.escape
 from config import etc
 from utils import log
 
-from views import user
+from views import user, admin
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -29,28 +29,18 @@ class Application(tornado.web.Application):
 	    template_path=etc.path_tempalte,
 	    static_path=etc.path_static,
 	    cookie_secret=etc.cookie_secret,
-	    login_url=r"guest",
+	    login_url=r"/admin/login/",
 	    xsrf_cookies=False,
 	    debug=True
 	)
         
         handlers = [
-            (r'/api/', user.ApiHandler),
-            (r'/back/bonus/presell/', user.BackBbonusPpresellHandler),
-            (r'/cinema/list/', user.CinemaListHandler),
-            (r'/city/table/', user.CityTableHandler),
-            (r'/get/bonus/', user.GetBonusHandler),
-            (r'/order/confirm/', user.OrderConfirmHandler),
-            (r'/order/error/', user.OrderErrorHandler),
-            (r'/order/error/summary/', user.OrderErrorSummaryHandler),
-            (r'/order/list/', user.OrderListHandler),
-            (r'/orders/refund/', user.OrdersRefundHandler),
-            (r'/pay/query/', user.PayQueryHandler),
-            (r'/play/check/', user.PlayCheckHandler),
-            (r'/qryinvalidcode/', user.QryinvalidcodeHandler),
-            (r'/query/bonus/', user.QueryBonusHandler),
-            (r'/user/active/info/', user.UserActiveInfoHandler),
-            (r'/wanda/sections/', user.WandaSectionsHandler),
+            (r'/admin/login/', admin.AdminLoginHandler),
+            (r'/admin/', admin.AdminHandler),
+            (r'/admin/logout/', admin.AdminLogoutHandler),
+            (r'/admin/check/goods/', admin.AdminCheckGoods),
+            (r'/admin/public/goods/', admin.AdminPublicGoodsHandler),
+            
 	]
 
 	tornado.web.Application.__init__(self, handlers, **settings)
@@ -69,6 +59,6 @@ def main(p_port):
 
 
 if __name__ == '__main__':
-    main(8000)
+    main(8888)
 
 
